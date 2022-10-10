@@ -1,5 +1,65 @@
-.lablink
+title
 {
-  font-size: 120%;
-  font-weight: bold;
+
+}
+
+.dropdown-menu
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 280px;
+  border: 1px solid black;
+  overflow: auto;
+  text-align: center;
+}
+
+.dropdown-menu li
+{
+  padding: 8px 16px;
+  border-bottom: 1px solid black;
+}
+
+.dropdown-menu ul:last-child
+{
+  border-bottom: none;
+}
+
+.dropdown-menu a
+{
+  padding: 8px 16px;
+  color:black;
+  text-decoration: none;
+}
+
+.dropdown-menu a:hover
+{
+  color: white;
+  background-color: tan;
+}
+
+.labs-menu
+{
+  margin: 15px 25px;
+  padding: 20px 20px;
+  border: 2px solid gray;
+  background: #00a1ff1a;
+}
+
+#homepage-title
+{
+  font-size: 150%;
+  font-family: Georgia;
+}
+
+#self-intro
+{
+  font-family: sans-serif;
+}
+
+#my-photo
+{
+  width: 300px;
+  float: right;
+  padding-right: 50px;
 }
