@@ -1,0 +1,13 @@
+h1
+{
+  color: white;
+  background-color: black;
+  width: 600px;
+}
+
+#computer-task
+{
+  border-style: dashed;
+  border: 1px solid gray;
+  text-shadow: 1px;
+}

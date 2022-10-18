@@ -1,0 +1,21 @@
+body
+{
+  padding: 10px;
+  background-color: rgba(255, 190, 32, 0.2);
+}
+
+#mainBody
+{
+  border: 2px solid tomato;
+  border-style: ridge;
+  margin: 20px 15px;
+  padding:15px;
+}
+
+.output
+{
+  border: 2px solid dodgerblue;
+  border-style: ridge;
+  margin: 20px 15px;
+  padding:15px;
+}
