@@ -19,3 +19,9 @@ body
   margin: 20px 15px;
   padding:15px;
 }
+
+#Tesla
+{
+  width: 300px;
+  float: right;
+}
