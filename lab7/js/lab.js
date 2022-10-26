@@ -56,6 +56,7 @@ function anagramGenerator()
   return anagramString;
 }
 
+//A function that shuffles an array
 function createAnagram(tempArray)
 {
   var shuffledArray = [];
