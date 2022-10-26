@@ -8,6 +8,7 @@
 var a = [2, 5, 47, 325, 9];
 var a2 = [13, 74, 9394, 2, 10];
 var combinedArray = [];
+var outputEl = document.getElementById("output");
 
 //Define functions to do some calculation
 function getSqrt(x)
@@ -34,20 +35,20 @@ function mixArraies(array1, array2)
     console.log("The lengths of two arraies are different!");
     return "Please check the lengths of the arraies!";
   }
-  return combinedArray;
+  return "This is the mixed array: " + combinedArray;
 }
 
-function displayResult(displayedFunction)
+function displayResult(str1, str2, displayedFunction)
 {
-  return "It's the result of trying to write a function with call back: "+ displayedFunction;
+  return outputEl.innerHTML = str1 +"<br><br>"+ str2 +"<br><br>"+ "It's the result of trying to write a function with call back: "+ displayedFunction;
 }
 
 //Use console for debugging
-console.log("The sqrt of all elements in a: ", a.map(getSqrt));
-console.log("Double all the elements in a2: ", a2.map(getDouble));
-console.log(displayResult(mixArraies(a, a2)));
+var outputStr1 = "The sqrt of all elements in a: " + a.map(getSqrt);
+console.log("outputStr1: ", outputStr1);
+var outputStr2 = "Double all the elements in a2: " + a2.map(getDouble);
+console.log("outputStr2: ", outputStr2);
 
 //Display the calculation results in HTML
-var outputEl = document.getElementById("output");
 
-outputEl.innerHTML = "The sqrt of all elements in a: " + a.map(getSqrt)+ "<br><br>" + "Double all the elements in a2: " + a2.map(getDouble) + "<br><br>" + displayResult(mixArraies(a, a2));
+displayResult(outputStr1, outputStr2, mixArraies(a, a2));
