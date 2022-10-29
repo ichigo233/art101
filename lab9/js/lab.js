@@ -40,8 +40,9 @@ outputButton.onclick = function()
 {
   if(count < 2)
   {
+    console.log(ul1.children);
     count++;
-    ul1.insertBefore(ul2.lastElementChild, ul1[0]);
+    ul1.insertBefore(ul2.lastElementChild, ul1.children[0]);
   }
 }
 
