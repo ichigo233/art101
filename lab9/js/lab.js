@@ -33,7 +33,7 @@ ul2.innerHTML ="<li>PC</li> <li>Xbox Series X/S</li>";
 outputEl.appendChild(ul1);
 outputEl.appendChild(ul2);
 
-//Create a button that insert the last element from the second list to the first list as its first element
+//Create a button that insert the last element from the second list to the first list as its first element.
 
 var outputButton = document.getElementById("moveElementButton");
 outputButton.onclick = function()
