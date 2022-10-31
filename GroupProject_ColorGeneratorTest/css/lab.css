@@ -37,6 +37,15 @@ h2
   border-bottom: none;
 }
 
+#moveElementButton
+{
+  font-size: 15px;
+  padding: 12px 20px;
+  color: white;
+  background-color: CornflowerBlue;
+  border: none;
+}
+
 .bodyParagraphs
 {
   border: 3px solid tomato;
@@ -51,7 +60,7 @@ h2
 .labImages
 {
   width : 20%;
-  float : right;
+  float :right;
 }
 
 .clearfix
