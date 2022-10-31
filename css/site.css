@@ -1,3 +1,15 @@
+.clearfix
+{
+  padding: 5px 5px;
+  margin: 10px 3px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .dropdown-menu
 {
   list-style-type: none;
@@ -33,7 +45,7 @@
   background-color: tan;
 }
 
-.self-intro
+.bodyParagraphs
 {
   margin: 15px 15px;
   padding: 10px 15px;
