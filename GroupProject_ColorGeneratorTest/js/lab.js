@@ -10,8 +10,13 @@ var colorsEl = document.getElementById("colors");
 var colors_Num = (colorsEl.childNodes.length-1)/2;
 
 var r, g, b, a;
-var randomColor = [r, g, b, a];
 var colorResult;
+
+var clickCount = 0;
+
+var testClickCount = 0;
+var imageButton = document.getElementById("imageButton");
+var testImage = document.getElementById("photo");
 
 outputButton.onclick = function()
 {
@@ -40,11 +45,17 @@ outputButton.onclick = function()
   console.log("--------------------Phase 4--------------------");
 
   //console.log("Final test for all colors!")
-
+  clickCount++;
+  console.log("clickCount: ", clickCount);
   for(let i = 0; i < colors_Num; i++)
   {
     getRandomColor(i);
   }
+}
+
+imageButton.onclick = function()
+{
+  changeImage();
 }
 
 function getRandomColor(x)
@@ -66,4 +77,21 @@ function getRandomColor(x)
   console.log(colorResult);
   colorsEl.childNodes[2*x+1].style.backgroundColor = colorResult;
   return;
+}
+
+function changeImage()
+{
+  testClickCount++;
+  if(testClickCount % 2 == 0)
+  {
+    console.log("testClickCount: ", testClickCount % 2);
+    console.log("testImage: ", testImage);
+    testImage.src = "img/photo.jpg";
+  }
+  else
+  {
+    console.log("testClickCount: ", testClickCount % 2);
+    console.log("testImage: ", testImage);
+    testImage.src = "img/photo2.jpg";
+  }
 }
