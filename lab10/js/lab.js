@@ -19,7 +19,7 @@ inputButton.addEventListener("click", function() {
     document.getElementById("output").innerHTML = "Here is an anagram: " + anagramResult;
   }
   return;
-})
+});
 
 extraButton.addEventListener("click", function() {
   console.log(extraInputs.length);
@@ -38,7 +38,7 @@ extraButton.addEventListener("click", function() {
       document.getElementById("output").appendChild(tempChild);
     }
   }
-})
+});
 
 function anagramGenerator(userName)
 {
