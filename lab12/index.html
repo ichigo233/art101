@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lab 12</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<script src = "js/lab.js" defer></script>
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/lab.css">
+</head>
+<body>
+	<h1>Lab 12: Conditionals</h1>
+
+	<hr>
+
+	<div class = "bodyParagraphs">
+
+		<h2>Challenge</h2>
+		<p>For this lab, we needed to write a function that returned different results based on different input/conditions.</p>
+
+		<h2>Problems</h2>
+		<p>Writing the function for task 1 to task 3 and doing refactoring for the bonus part were not hard. The only problem I had was about jQuery. When I tested my code locally, I found that using the selector $("#userName") only returned undefined rather than actual user name.</p>
+
+		<h2>Results</h2>
+		<p>Finally I realized it was because the selector in jQuery would always returned an array. So I fixed the problem by adding index to the selector. As you can see, now the code works properly.</p>
+
+		<div id = "outputBlock">
+			<h2>Script Output</h2>
+			<h3>Prepare To Be Sorted Into Your House</h3>
+
+			<p>It's the time to enter your name: </p>
+			<input type = "text" id = "input">
+			<button id = "button">Submit Name</button>
+
+			<div id = "output"></div>
+		</div>
+	</div>
+
+</body>
+</html>
