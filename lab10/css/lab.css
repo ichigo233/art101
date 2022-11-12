@@ -1,11 +1,28 @@
 h1
 {
   font-family: "Lucida Console", "Courier New", monospace;
+  text-shadow: 1px 0px;
 }
 
 h2
 {
   font-family: "Lucida Console", "Courier New", monospace;
+  text-shadow: 1px 0px;
+}
+
+hr
+{
+  border-top: 2px solid gold;
+
+  width: 80%;
+  text-align: left;
+  margin-left: 0px;
+}
+
+input
+{
+  border: none;
+  border-bottom: 1px solid gray;
 }
 
 #outputBlock
@@ -15,32 +32,34 @@ h2
   margin: 10px 3px;
 }
 
+#inputButton
+{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 15px;
+  padding: 6px 12px;
+  color: white;
+  background-color: CornflowerBlue;
+  border: none;
+}
+
+#extraButton
+{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 15px;
+  padding: 6px 12px;
+  color: white;
+  background-color: CornflowerBlue;
+  border: none;
+}
+
 .bodyParagraphs
 {
   border: 3px solid tomato;
-  padding: 15px 20px;
+  padding: 15px 15px;
+  width: 75%;
 }
 
 .bodyParagraphs h2
 {
   margin: 15px 0px;
-}
-
-.labImages
-{
-  width : 20%;
-  float : right;
-}
-
-.clearfix
-{
-  border: 2px solid gold;
-  padding: 5px 5px;
-  margin: 10px 3px;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
 }
