@@ -35,7 +35,7 @@ outputEl.appendChild(ul2);
 
 //Create a button that insert the last element from the second list to the first list as its first element.
 
-var outputButton = document.getElementById("moveElementButton");
+var outputButton = document.getElementById("button");
 outputButton.onclick = function()
 {
   if(count < 2)

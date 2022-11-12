@@ -29,9 +29,10 @@ hr
 #output p
 {
   color: white;
-  background-color: orange;
-  width: 40%;
-  text-align: left;
+  background-color: red;
+  font-size: 120%;
+  width: 75%;
+  padding: 5px 10px;
 }
 
 #button
