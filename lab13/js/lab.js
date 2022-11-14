@@ -1,6 +1,6 @@
 /*
  * Author: Wang Liao
- * Created: 11 November
+ * Created: 13 November
  * License: Public Domain
  */
 
@@ -41,15 +41,65 @@ function FizzBuzz()
 //FizzBuzz();
 
 //---------Task X Test-------------
-var inputNum = 0;
-var tempId = "";
-var addingButton = $("#button");
 
-addingButton.click(function(){
-  inputNum++;
-  tempId += inputNum * 2
-  $("#outputSetting").append("<input type = 'text' id = 'input' + 'rowNum'>");
-  $("#outputSetting").append("<input type = 'text' id = 'input' + 'rowNum'>");
+//Use a bool to know if it's the first time pressing setButton. Because it needs to add some <br> after the first time.
+var firstClick = true;
 
-  $("#outputSetting").append("<br><br>");
+//Add event listener to setButton. Every time pressing the button, it will add two input fields to outputSetting div. The first one input is the index, the second one is the corresponding text.
+
+$("#setButton").click(function(){
+  if(firstClick)
+  {
+    $("#outputSetting").append("<input type = 'text' class = 'index'>");
+    firstClick = false;
+  }
+  else
+  {
+    $("#outputSetting").append("<br><br><input type = 'text' class = 'index'>");
+  }
+  $("#outputSetting").append("<input type = 'text' class = 'indexText'>");
+  //console.log($(".index"));
+});
+
+//Add event listener to runButton
+$("#runButton").click(function(){
+  var indexArray = [];
+  var indexTextArray = [];
+
+  $("#output").empty();
+
+  for(let i = 0; i < $(".index").length; i++)
+  {
+    if($(".index")[i].value % 1 == 0 && $(".indexText")[i].value != "")
+    {
+      indexArray.push($(".index")[i].value);
+      indexTextArray.push($(".indexText")[i].value);
+    }
+  }
+
+  if($("#loopNum")[0].value > 0)
+  {
+    for(let i = 1; i <= $("#loopNum")[0].value; i++)
+    {
+      var str = "";
+
+      for(let j = 0; j < indexArray.length; j++)
+      {
+        if(i % indexArray[j] == 0)
+        {
+          str += indexTextArray[j];
+        }
+      }
+
+      if(str != "")
+      {
+        str += "!";
+      }
+      $("#output").append("<p> " + i + ": " + str);
+    }
+  }
+  else
+  {
+    console.log("Please enter a number greater than 0!")
+  }
 });

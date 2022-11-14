@@ -19,6 +19,23 @@ hr
   margin-left: 0px;
 }
 
+input
+{
+  margin: 6px 8px;
+  border: 1px solid gray;
+  background-color: #f8f8f8;
+}
+
+button
+{
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 14px;
+  padding: 6px 8px;
+  color: white;
+  background-color: CornflowerBlue;
+  border: none;
+}
+
 #outputBlock
 {
   border: 2px solid dodgerblue;
@@ -26,18 +43,15 @@ hr
   margin: 10px 3px;
 }
 
-#output p
+#output
 {
-}
+  border: 3px solid gold;
+  padding: 15px 15px;
 
-#button
-{
-  font-family: "Lucida Console", "Courier New", monospace;
-  font-size: 15px;
-  padding: 6px 12px;
-  color: white;
-  background-color: CornflowerBlue;
-  border: none;
+  width: 75%;
+  column-count: auto;
+  column-width: 150px;
+  column-gap: 30px;
 }
 
 .bodyParagraphs
