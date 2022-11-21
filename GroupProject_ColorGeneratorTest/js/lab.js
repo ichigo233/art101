@@ -21,28 +21,7 @@ colorButton.onclick = function()
   console.log("clickCount: " + clickCount);
 }
 
-//Add event listener to the test imageButton to change image every time you click it
-imageButton.onclick = function()
-{
-  changeImage();
-}
-
-//Add event listeners to all color blocks TEST!!!
-
-// First solution - For loop
-// for(let i = 1; i <= 5; i++)
-// {
-//   var colorId = "#color" + i.toString();
-//   console.log("colorId before adding event listener: " + colorId);
-//   $(colorId).click(function(){
-//     copyColor(colorId);
-//     console.log("colorId after adding event listener: " + colorId);
-//   });
-//   //debugger;
-// }
-
-//Second solustion, repeate the same function for 5 times
-
+//Add event listener to all the colors. Copy the color info to the clipboard.
 $("#color1").click(function(){
   copyColor("#color1");
 });
@@ -63,21 +42,44 @@ $("#color5").click(function(){
   copyColor("#color5");
 });
 
-function copyColor(colorId)
+//Add event listener to the test imageButton to change image every time you click it
+imageButton.onclick = function()
 {
-  var colorInfo = $(colorId)[0].style.backgroundColor;
-  // Copy the text inside the text field
-  navigator.clipboard.writeText(colorInfo);
-  // Alert the copied text
-  if(colorInfo.length != 0)
-  {
-    console.log("Copied the color: " + colorInfo);
-  }
+  changeImage();
+  // changeMoodBackground();
 }
+
+// Change background depending on Roy's mood
+/*function changeMoodBackground(x){
+  document.body.style.background = x;
+}
+    if (clickCount < 6) {
+      changeMoodBackground('yellow');
+}
+    else if (clickCount >= 6 && clickCount <= 12) {
+      changeMoodBackground('blue');
+    }
+    else {
+      changeMoodBackground('red');
+    } */
 
 //Generate random colors as the background color
 function getRandomColor(x)
 {
+  //Clickcount & Change Roy image
+  if(clickCount < 6)
+  {
+    //royImage.src = "img/roy temp hap.png";
+  }
+  else if(clickCount >= 6 && clickCount <= 12)
+  {
+    //royImage.src = "img/roy temp sad.png";
+  }
+  else
+  {
+    //royImage.src = "img/roy temp angy.png";
+  }
+
   //Generate colors
   colorResult = "rgba(";
   for(let i = 0; i < 4; i++)
@@ -98,6 +100,19 @@ function getRandomColor(x)
   return;
 }
 
+//Copy the color to the clipboard
+function copyColor(colorId)
+{
+  var colorInfo = $(colorId)[0].style.backgroundColor;
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(colorInfo);
+  // Print the copied color
+  if(colorInfo.length != 0)
+  {
+    console.log("Copied the color: " + colorInfo);
+  }
+}
+
 //It's just a test function for changing image
 function changeImage()
 {
@@ -111,3 +126,35 @@ function changeImage()
     royImage.src = "img/roy temp sad.png";
   }
 }
+
+//---------Text Box Test Area------------------
+var speeds =
+{
+  slow: 120,
+  normal: 70,
+  fast: 30
+}
+
+var textLines =
+[
+  { string: "Roy Quote 1", speed: speeds.normal },
+  { string: "Roy Quote 2", speed: speeds.slow },
+  { string: "Roy Quote 3", speed: speeds.fast }
+]
+
+var characters = [];
+textLines.forEach((line, index) => {
+
+  if(index < textLines.length - 1)
+  {
+    line.string += " ";
+  }
+
+  line.string.split("").forEach(character =>{
+
+    $("#quote").append(character);
+    //console.log(character);
+
+  });
+
+});
