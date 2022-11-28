@@ -18,6 +18,12 @@ colorButton.onclick = function()
   {
     getRandomColor(i);
   }
+  var ifSaySomethingNum = Math.floor(Math.random() * 10);
+  if(ifSaySomethingNum < 8)
+  {
+    saySomething(clickCount);
+  }
+
   console.log("clickCount: " + clickCount);
 }
 
@@ -127,34 +133,52 @@ function changeImage()
   }
 }
 
-//---------Text Box Test Area------------------
+//---------Text Box Changing Test Area------------------
 var speeds =
 {
   slow: 120,
-  normal: 70,
-  fast: 30
+  normal: 700,
+  fast: 300
 }
 
 var textLines =
-[
-  { string: "Roy Quote 1", speed: speeds.normal },
-  { string: "Roy Quote 2", speed: speeds.slow },
-  { string: "Roy Quote 3", speed: speeds.fast }
-]
+{
+  happyQuotes:[
+    { string: "Roy Happy Quote 1", speed: speeds.normal},
+    { string: "Roy Happy Quote 2", speed: speeds.slow},
+    { string: "Roy Happy Quote 3", speed: speeds.fast}],
+  frustratedQuotes: [
+    { string: "Roy Frustrated Quote 1", speed: speeds.normal},
+    { string: "Roy Frustrated Quote 2", speed: speeds.normal},
+    { string: "Roy Frustrated Quote 3", speed: speeds.normal}],
+  angryQuotes: [
+    { string: "Roy angry Quote 1", speed: speeds.normal},
+    { string: "Roy angry Quote 2", speed: speeds.normal},
+    { string: "Roy angry Quote 3", speed: speeds.normal}],
+}
 
-var characters = [];
-textLines.forEach((line, index) => {
-
-  if(index < textLines.length - 1)
+function saySomething(clickCount)
+{
+  var randomQuote;
+  if(clickCount < 6)
   {
-    line.string += " ";
+    var randomNum = Math.floor(Math.random() * textLines.happyQuotes.length);
+    randomQuote = textLines.happyQuotes[randomNum].string;
+    $("#quote").html("<p>" + randomQuote);
+    console.log(randomQuote);
   }
-
-  line.string.split("").forEach(character =>{
-
-    $("#quote").append(character);
-    //console.log(character);
-
-  });
-
-});
+  else if(clickCount >= 6 && clickCount < 12)
+  {
+    var randomNum = Math.floor(Math.random() * textLines.frustratedQuotes.length);
+    randomQuote = textLines.frustratedQuotes[randomNum].string;
+    $("#quote").html("<p>" + randomQuote);
+    console.log(randomQuote);
+  }
+  else //clickCount >= 12
+  {
+    var randomNum = Math.floor(Math.random() * textLines.angryQuotes.length);
+    randomQuote = textLines.angryQuotes[randomNum].string;
+    $("#quote").html("<p>" + randomQuote);
+    console.log(randomQuote);
+  }
+}
